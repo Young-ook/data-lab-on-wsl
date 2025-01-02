@@ -1,0 +1,7 @@
+jupyterlab==4.3.4
+jupyterlab_git==0.50.2
+matplotlib==3.10.0
+nltk==3.9.1
+notebook_shim==0.2.4
+numpy==2.2.1
+scikit-learn==1.6.0
