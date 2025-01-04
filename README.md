@@ -1,40 +1,34 @@
-# Jupyter on WSL(Windows Subsystem for Linux)
-## Install python
-
+## Jupyter on WSL(Windows Subsystem for Linux)
+### Install Python
 ```
 sudo apt update
-sudo apt install python3 python3-pip python3-venv python-is-python3
+sudo apt install python3 python3-venv python3-pip-whl python-is-python3
 ```
 
-## Alias to python3
-If you are not able to install python-is-python3 package
+Configure alias to the python version 3 binary file if you are not able to install python-is-python3 package
 ```
 edit ~/.bashrc
 alias python="/usr/bin/python3"
 ```
 
-## Enable virtual environment
+### Activate your virtual environment
 ```
 python -m venv .venv
 source ./.venv/bin/activate
 ```
 
-## Install Jupyter
-### Install Jupyter Notebook
+### Install JupyterLab and Utilties
+Environment: Python 3.11.2, Debian 12 (Bookworm)
 ```
-(venv) pip install jupyter
-```
-
-### Install Jupyter Lab
-```
-(venv) pip install jupyter
+(.venv) pip install -r requirements.txt
 ```
 
-## Launch Jupyter Notebook or Jupyter Lab
+### Launch Jupyter Lab
 ```
-jupyter-notebook --no-brower (--port 8080)
+(.venv) jupyter-lab --no-brower (--port 8080)
 ```
 
+### Exit virtual environment
 ```
-jupyter-lab --no-brower (--port 8080)
+(.venv) deactivate
 ```
