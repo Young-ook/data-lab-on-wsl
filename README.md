@@ -60,6 +60,9 @@ Set environment variable to the current spark runtime:
 export SPARK_HOME="$HOME/.local/lib/spark-3.5.4-bin-hadoop3"
 ```
 
+### Run Spark Examples
+![wsl-spark-pi-example-local](images/wsl-spark-pi-example-local.png)
+
 # Resources
 - [Spark Standalone Mode](https://spark.apache.org/docs/latest/spark-standalone.html)
 - [Submitting Spark Applications](https://spark.apache.org/docs/latest/submitting-applications.html)
