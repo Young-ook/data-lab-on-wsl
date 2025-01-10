@@ -1,4 +1,9 @@
 #!/bin/bash
+
+# It is required to set the SPARK_HOME environment variable.
+# Please make sure the variable indicates to the right path to your spark.
+export SPARK_HOME="$HOME/.local/lib/spark-3.5.4-bin-hadoop3"
+
 # Run pi caculation application locally on 8 cores
 $SPARK_HOME/bin/spark-submit \
   --class org.apache.spark.examples.SparkPi \
@@ -9,11 +14,11 @@ $SPARK_HOME/bin/spark-submit \
 # Run on a Spark standalone cluster in client deploy mode
 #$SPARK_HOME/bin/spark-submit \
 #  --class org.apache.spark.examples.SparkPi \
-#  --master spark://207.184.161.138:7077 \
-#  --executor-memory 20G \
-#  --total-executor-cores 100 \
+#  --master spark://localhost:7077 \
+#  --executor-memory 4G \
+#  --total-executor-cores 4 \
 #  $SPARK_HOME/examples/jars/spark-examples_*.jar \
-#  1000
+#  100
 
 # Run on a YARN cluster in cluster deploy mode
 #export HADOOP_CONF_DIR=XX
@@ -27,3 +32,5 @@ $SPARK_HOME/bin/spark-submit \
 #  --executor-cores 2 \
 #  $SPARK_HOME/examples/jars/spark-examples_*.jar \
 #  1000
+
+unset SPARK_HOME
