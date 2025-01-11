@@ -1,4 +1,4 @@
-# Spark on WSL(Windows Subsystem for Linux)
+# Spark on WSL
 Environment:
 - Debian 12 (Bookworm)
 - OpenJDK 11 (or Amazon Corretto 11)
