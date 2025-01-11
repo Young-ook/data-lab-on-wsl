@@ -33,7 +33,7 @@ bash spark-pi-local.sh
 ### Standalone Cluster
 Or, if you want to run your spark Pi application, you need to run spark standalone cluster. then, you can run the application on your cluster.
 ```
-bash spark-standalone.sh -r
+bash spark-standalone-ctl.sh -r
 bash spark-pi-standalone.sh
 ```
 
@@ -44,7 +44,7 @@ bash spark-pi-standalone.sh
 
 You can stop and terminate your spark standalone cluster after your spark job is finished.
 ```
-bash spark-standalone.sh -t
+bash spark-standalone-ctl.sh -t
 ```
 
 # Additional Resources

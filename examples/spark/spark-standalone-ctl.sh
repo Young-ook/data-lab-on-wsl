@@ -47,7 +47,6 @@ function stop() {
 
 # main
 args "$@"
-echo $ctl
 
 case $ctl in
   'run')
