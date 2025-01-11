@@ -2,7 +2,9 @@
 
 # It is required to set the SPARK_HOME environment variable.
 # Please make sure the variable indicates to the right path to your spark.
-export SPARK_HOME="$HOME/.local/lib/spark-3.5.4-bin-hadoop3"
+if [ -z "${SPARK_HOME}" ]; then
+  echo "SPARK_HOME is not configured. Please install spark and configure home path to environment variable."
+fi
 
 ctl='run'
 
