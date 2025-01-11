@@ -6,6 +6,6 @@ Environment:
 - OpenJDK 11 (or Amazon Corretto 11)
 - Spark 3.5.4
 
-# Examples
+# Labs
 - [Jupyter](examples/jupyter/README.md)
 - [Spark](examples/spark/README.md)
