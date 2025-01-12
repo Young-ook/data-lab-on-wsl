@@ -16,6 +16,7 @@ alias python="/usr/bin/python3"
 ```
 
 ### Activate your virtual environment
+Move to the jupyter example directory under the cloned *data-lab-on-wsl* repositiry on your local environment. And activate new python virtual environment.
 ```
 python -m venv .venv
 source ./.venv/bin/activate
