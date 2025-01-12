@@ -5,7 +5,26 @@ Environment:
 - Spark 3.5.4
 
 ## Install Java
-Install OpenJDK 11
+The default JDK for Debian 12 is OpenJDK 11, and follow the instructions to install OpenJDK 11.
+```
+sudo apt install default-jdk
+```
+
+Or, you can use Amazon Corretto
+```
+curl -LO https://corretto.aws/downloads/latest/amazon-corretto-11-x64-linux-jdk.deb
+sudo apt install java-common && sudo dpkg -i amazon-corretto-11-x64-linux-jdk.deb
+```
+
+If you have installed the multiple java runtimes, you can switch to the java runtime you want using `update-alternatives` command.
+```
+sudo update-alternatives java
+
+*+  1   /usr/lib/jvm/java-7-openjdk-amd64/bin/java
+    2   /usr/lib/jvm/java-8-openjdk-amd64/bin/java
+
+Enter to keep the current selection[+], or type selection number:
+```
 
 ## Install Spark
 Download the binary package file.
