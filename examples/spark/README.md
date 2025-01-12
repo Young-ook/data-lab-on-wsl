@@ -18,7 +18,8 @@ curl -O https://dlcdn.apache.org/spark/spark-3.5.4/spark-3.5.4-bin-hadoop3.tgz
 ```
 Set environment variable to the current spark runtime.
 ```
-# set SPARK_HOME directory
+# It is required to set the SPARK_HOME environment variable.
+# Please make sure the variable indicates to the right path to your spark.
 export SPARK_HOME="$HOME/.local/lib/spark-3.5.4-bin-hadoop3"
 ```
 
