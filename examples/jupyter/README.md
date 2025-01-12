@@ -1,4 +1,4 @@
-# Jupyter on WSL(Windows Subsystem for Linux)
+# Jupyter on WSL
 Environment:
 - Debian 12 (Bookworm)
 - Python 3.11.2
