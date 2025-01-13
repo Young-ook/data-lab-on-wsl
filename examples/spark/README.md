@@ -59,8 +59,8 @@ bash spark-pi-standalone.sh
 
 ![wsl-spark-standalone-master-web-ui](../../images/wsl-spark-standalone-master-web-ui.png)
 ![wsl-spark-standalone-worker-details-web](../../images/wsl-spark-standalone-worker-details-web.png)
-![wsl-spark-standalone-app-details-web](../../images/wsl-spark-standalone-app-details-web.png)
-![wsl-spark-standalone-pi-example-stdout](../../images/wsl-spark-standalone-pi-example-stdout.png)
+![wsl-spark-pi-example-standalone-app-details](../../images/wsl-spark-pi-example-standalone-app-details.png)
+![wsl-spark-pi-example-standalone-stdout](../../images/wsl-spark-pi-example-standalone-stdout.png)
 
 You can stop and terminate your spark standalone cluster after your spark job is finished.
 ```
