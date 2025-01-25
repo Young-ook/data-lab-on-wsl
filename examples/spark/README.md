@@ -7,7 +7,7 @@ Open the `pyspark-basic.ipynb` file in the jupyter notebook. And follow the PySp
 ### Local Machine
 Simply, you can run your spark Pi caculation application on your local machine.
 ```
-bash spark-pi-local.sh
+bash spark-pi-submit-job.sh -l
 ```
 ![wsl-spark-pi-example-local](../../images/wsl-spark-pi-example-local.png)
 
@@ -15,7 +15,7 @@ bash spark-pi-local.sh
 Or, you can run your spark Pi application on your local standalone cluster. You can skip to launch standalone cluster if your cluster is already running. Then, submit the standalone spark Pi job into your local cluster.
 ```
 sh spark-ctl.sh -r
-bash spark-pi-standalone.sh
+bash spark-pi-submit-job.sh -s
 ```
 ![wsl-spark-standalone-master-web-ui](../../images/wsl-spark-standalone-master-web-ui.png)
 ![wsl-spark-standalone-worker-details-web](../../images/wsl-spark-standalone-worker-details-web.png)
