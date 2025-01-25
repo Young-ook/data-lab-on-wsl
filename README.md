@@ -84,7 +84,7 @@ To set the environment variables permanently, add the script below to your profi
 ```
 # It is required to set the SPARK_HOME environment variable.
 # Please make sure the variable indicates to the right path to your spark.
-if [ -z "${SPARK_HOME}" ]; then
+if [ -z $SPARK_HOME ] ; then
   export SPARK_HOME="$HOME/.local/lib/spark-3.5.4-bin-hadoop3"
 fi
 ```
