@@ -1,4 +1,10 @@
 # Spark on WSL
+## Spark Architecture
+Apache Spark architecture consists of a driver program that coordinates tasks and interacts with a cluster manager to allocate resources. The driver communicates with worker nodes, where tasks are executed within an executor’s JVM. SparkContext manages the execution environment, while the DataFrame API enables high-level abstraction for data manipulation. SparkSession provides a unified entry point for Spark functionality. Underneath, the cluster manager oversees resource allocation and task scheduling across nodes, facilitating parallel computation for processing large-scale data efficiently.
+
+Spark applications run as independent sets of processes on a cluster, coordinated by the SparkContext object in your main program (called the driver program). Specifically, to run on a cluster, the SparkContext can connect to several types of cluster managers (either Spark’s own standalone cluster manager, Mesos, YARN or Kubernetes), which allocate resources across applications. Once connected, Spark acquires executors on nodes in the cluster, which are processes that run computations and store data for your application. Next, it sends your application code (defined by JAR or Python files passed to SparkContext) to the executors. Finally, SparkContext sends tasks to the executors to run.
+![spark-cluster-overview](../../images/spark-cluster-overview.png)
+
 ## Run Spark Examples
 ### PySpark on Jupyter
 Open the `pyspark-basic.ipynb` file in the jupyter notebook. And follow the PySpark basic tutorials.
@@ -27,3 +33,4 @@ bash spark-pi-submit-job.sh -s
 # References
 - [Spark Standalone Mode](https://spark.apache.org/docs/latest/spark-standalone.html)
 - [Submitting Spark Applications](https://spark.apache.org/docs/latest/submitting-applications.html)
+- [Cluster Mode Overview](https://spark.apache.org/docs/latest/cluster-overview.html)
