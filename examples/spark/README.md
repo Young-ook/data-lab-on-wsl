@@ -1,7 +1,7 @@
 # Spark on WSL
 ## Run Spark Examples
-### Jupyter with Standalone Cluster
-Open the `init-pyspark.ipynb` file in the jupyter notebook.
+### PySpark on Jupyter
+Open the `pyspark-basic.ipynb` file in the jupyter notebook. And follow the PySpark basic tutorials.
 ![wsl-pyspark-jupyter-sc](../../images/wsl-pyspark-jupyter-sc.png)
 
 ### Local Machine
