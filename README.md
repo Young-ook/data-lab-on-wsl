@@ -38,7 +38,7 @@ After you are in your virtual environment, install jupyter package and dependenc
 ```
 
 ### Launch Jupyter Lab
-Launch a jupyter lab:
+Launch a jupyter lab and open a web browser to access:
 ```
 (.venv) jupyter-lab --no-brower (--port 8080)
 ```
