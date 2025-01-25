@@ -12,7 +12,7 @@ bash spark-pi-submit-job.sh -l
 ![wsl-spark-pi-example-local](../../images/wsl-spark-pi-example-local.png)
 
 ### Standalone Cluster
-Or, you can run your spark Pi application on your local standalone cluster. You can skip to launch standalone cluster if your cluster is already running. Then, submit the standalone spark Pi job into your local cluster.
+Or, you can run your spark Pi application on your local standalone cluster. Follow the instructions to [run a spark standalone cluster](https://github.com/Young-ook/data-lab-on-wsl?tab=readme-ov-file#launch-a-standalone-cluster). You can skip this if your cluster is already running. Then, submit the standalone spark Pi job into your local cluster.
 ```
 sh spark-ctl.sh -r
 bash spark-pi-submit-job.sh -s
