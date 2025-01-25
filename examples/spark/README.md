@@ -14,7 +14,7 @@ bash spark-pi-local.sh
 ### Standalone Cluster
 Or, you can run your spark Pi application on your local standalone cluster. You can skip to launch standalone cluster if your cluster is already running. Then, submit the standalone spark Pi job into your local cluster.
 ```
-bash spark-ctl.sh -r
+sh spark-ctl.sh -r
 bash spark-pi-standalone.sh
 ```
 ![wsl-spark-standalone-master-web-ui](../../images/wsl-spark-standalone-master-web-ui.png)
