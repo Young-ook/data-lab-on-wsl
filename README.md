@@ -38,7 +38,7 @@ After you are in your virtual environment, install jupyter package and dependenc
 ```
 
 ### Launch Jupyter Lab
-Launch a jupyter lab:
+Launch a jupyter lab and open a web browser to access:
 ```
 (.venv) jupyter-lab --no-brower (--port 8080)
 ```
@@ -75,17 +75,29 @@ Or you can download using curl if you don't have wget.
 curl -O https://dlcdn.apache.org/spark/spark-3.5.4/spark-3.5.4-bin-hadoop3.tgz
 ```
 
-And move the extracted directory where you want to install. In this example, we will install spark under the *$HOME/.local/lib/*. If you finished to move the file, you have to set system environment variable to the current spark runtime. This is very important step to complete the spark installation:
+And move the extracted directory where you want to install. In this example, we will install spark under the *$HOME/.local/lib/*. If you finished to move the file, you have to set system environment variable to the current spark runtime:
+```
+export SPARK_HOME="$HOME/.local/lib/spark-3.5.4-bin-hadoop3"
+```
+
+To set the environment variables permanently, add the script below to your profile *$HOME/.profile* (if zsh, *$HOME/.zprofile*).
 ```
 # It is required to set the SPARK_HOME environment variable.
 # Please make sure the variable indicates to the right path to your spark.
-export SPARK_HOME="$HOME/.local/lib/spark-3.5.4-bin-hadoop3"
+if [ -z $SPARK_HOME ] ; then
+  export SPARK_HOME="$HOME/.local/lib/spark-3.5.4-bin-hadoop3"
+fi
+```
+
+For compatibility, you can also define environment variable settings in your *$HOME/.profile* and set zsh to emulate sh-mode in effect.
+```
+[[ -e ~/.profile ]] && emulate sh -c 'source ~/.profile'
 ```
 
 ### Launch a Standalone Cluster
 For pyspark integration with jupyter, we must launch a local spark standalone cluster:
 ```
-bash spark-ctl.sh -r
+sh spark-ctl.sh -r
 ```
 
 # Examples
@@ -100,5 +112,5 @@ You can stop and terminate the running juypter by simply pressing `ctrl+c` and f
 
 Then, you can stop your local standalone spark cluster after your spark job was finished:
 ```
-bash spark-ctl.sh -t
+sh spark-ctl.sh -t
 ```
