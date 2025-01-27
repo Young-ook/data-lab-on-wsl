@@ -12,5 +12,9 @@ git clone https://github.com/rhiever/Data-Analysis-and-Machine-Learning-Projects
 ```
 ![wsl-jupyter-da-ml-randy](../../images/wsl-jupyter-da-ml-randy.png)
 
+### Simple LLM (Large Language Model)
+Open the *simple-llm/simple-llm-student-guide* notebook and follow the instructions
+
 # References
 - [Data Analysis and Machine Learning projects](https://github.com/rhiever/Data-Analysis-and-Machine-Learning-Projects)
+- [Building the simplest LLM with Jupyter Notebook: A Students Guide](https://coda.io/@peter-sigurdson/building-the-simplest-llm-with-jupyter-notebook-a-students-guide)
