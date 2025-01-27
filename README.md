@@ -95,7 +95,7 @@ For compatibility, you can also define environment variable settings in your *$H
 ```
 
 ### Launch a Standalone Cluster
-For pyspark integration with jupyter, we must launch a local spark standalone cluster:
+Run your local standalone spark cluster:
 ```
 sh spark-ctl.sh -r
 ```
