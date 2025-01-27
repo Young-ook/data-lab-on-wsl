@@ -18,3 +18,7 @@ Open the *simple-llm/simple-llm-student-guide* notebook and follow the instructi
 # References
 - [Data Analysis and Machine Learning projects](https://github.com/rhiever/Data-Analysis-and-Machine-Learning-Projects)
 - [Building the simplest LLM with Jupyter Notebook: A Students Guide](https://coda.io/@peter-sigurdson/building-the-simplest-llm-with-jupyter-notebook-a-students-guide)
+
+# Additional Resources
+- [Terraform: Amazon SageMaker](https://github.com/Young-ook/terraform-aws-sagemaker/tree/main/examples/blueprint)
+- [Terraform: Data on Amazon EKS](https://github.com/Young-ook/terraform-aws-eks/tree/main/examples/data-ai)
