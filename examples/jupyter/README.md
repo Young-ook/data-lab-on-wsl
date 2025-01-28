@@ -22,3 +22,4 @@ Open the *simple-llm/simple-llm-student-guide* notebook and follow the instructi
 # Additional Resources
 - [Terraform: Amazon SageMaker](https://github.com/Young-ook/terraform-aws-sagemaker/tree/main/examples/blueprint)
 - [Terraform: Data on Amazon EKS](https://github.com/Young-ook/terraform-aws-eks/tree/main/examples/data-ai)
+- [Tensorflow Tutorials](https://www.tensorflow.org/tutorials)
