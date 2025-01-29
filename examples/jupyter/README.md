@@ -40,7 +40,6 @@ Open the `simple-llm-student-guide` notebook under the *data-lab-on-wsl/examples
 
 # References
 - [Data Analysis and Machine Learning projects](https://github.com/rhiever/Data-Analysis-and-Machine-Learning-Projects)
-- [Building the simplest LLM with Jupyter Notebook: A Students Guide](https://coda.io/@peter-sigurdson/building-the-simplest-llm-with-jupyter-notebook-a-students-guide)
 
 # Additional Resources
 - [Terraform: Amazon SageMaker](https://github.com/Young-ook/terraform-aws-sagemaker/tree/main/examples/blueprint)
