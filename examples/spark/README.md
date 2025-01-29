@@ -8,7 +8,7 @@ Spark applications run as independent sets of processes on a cluster, coordinate
 
 ## Run Spark Examples
 ### PySpark on Jupyter
-Open the `pyspark-basic.ipynb` file in the jupyter notebook. And follow the PySpark basic tutorials.
+Open the `pyspark-basic-local.ipynb` file in the jupyter notebook. And follow the PySpark basic tutorials.
 ![wsl-pyspark-jupyter-sc](../../images/wsl-pyspark-jupyter-sc.png)
 
 ### Local Machine
