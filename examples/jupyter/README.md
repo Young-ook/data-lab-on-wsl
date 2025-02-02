@@ -35,6 +35,13 @@ In summary, *Kubeflow* is more focused on orchestration and deployment of ML wor
 
 With MLflow example, you can learn how to enable MLflow service and integrate with Jupyter notebook for machine learning lifecycle management. Open the `ml-ops-mlflow` notebook under the *data-lab-on-wsl/examples/jupyter/ml-ops* directory and follow the instructions.
 
+If you are looking for the latest examples and advanced guide for MLflow, please refer to [the official repository](https://github.com/mlflow/mlflow) of mlflow opensource project. You can clone the mlflow into the *data-lab-on-wsl/examples/jupyter/ml-ops* directory and run examples by following the intructions of the jupyter notebooks under the example directory.
+```
+git clone https://github.com/mlflow/mlflow.git
+```
+
+![mlflow-web](../../images/mlflow-web.png)
+
 ### Simple LLM (Large Language Model)
 Open the `simple-llm-student-guide` notebook under the *data-lab-on-wsl/examples/jupyter/simple-llm* directory and follow the instructions.
 
