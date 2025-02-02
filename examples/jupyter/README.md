@@ -40,6 +40,8 @@ If you are looking for the latest examples and advanced guide for MLflow, please
 git clone https://github.com/mlflow/mlflow.git
 ```
 
+![mlflow-web](../../images/mlflow-web.png)
+
 ### Simple LLM (Large Language Model)
 Open the `simple-llm-student-guide` notebook under the *data-lab-on-wsl/examples/jupyter/simple-llm* directory and follow the instructions.
 
