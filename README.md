@@ -1,5 +1,4 @@
 # Data on WSL(Windows Subsystem for Linux)
-
 # Install Debian on WSL
 Open Settings > Apps > Programs and Features > Turn Windows features on or off dialog and select the *Windows Subsystem for Linux* to enable WSL on your system. You may reboot your system.
 
