@@ -13,7 +13,7 @@ git clone git@github.com:mrdbourke/pytorch-deep-learning.git
 pip3 install torch torchvision torchaudio
 ```
 
-![wsl-jupyter-ml-pytorch-bootcamp](../../images/wsl-jupyter-ml-pytorch-bootcamp.png)
+![wsl-jupyter-dl-pytorch-bootcamp](../../images/wsl-jupyter-dl-pytorch-bootcamp.png)
 
 ### Randy Olson's Data Analysis and Machine Learning projects
 This is a good project for learning data analysis and machine learning with hand-on. To run examples, clone the repository into the *data-lab-on-wsl/examples/jupyter* directory. And open and follow the instructions of each notebooks. For more details, please check out the [references](./README.md#references) at the bottom of this page.
