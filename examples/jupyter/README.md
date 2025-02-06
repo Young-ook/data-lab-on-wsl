@@ -45,10 +45,13 @@ git clone https://github.com/mlflow/mlflow.git
 ### Simple LLM (Large Language Model)
 Open the `simple-llm-student-guide` notebook under the *data-lab-on-wsl/examples/jupyter/simple-llm* directory and follow the instructions.
 
-# References
-- [Data Analysis and Machine Learning projects](https://github.com/rhiever/Data-Analysis-and-Machine-Learning-Projects)
-
 # Additional Resources
 - [Terraform: Amazon SageMaker](https://github.com/Young-ook/terraform-aws-sagemaker/tree/main/examples/blueprint)
 - [Terraform: Data on Amazon EKS](https://github.com/Young-ook/terraform-aws-eks/tree/main/examples/data-ai)
 - [Tensorflow Tutorials](https://www.tensorflow.org/tutorials)
+- [Kubeflow](https://www.kubeflow.org/)
+- [MLflow](https://mlflow.org/)
+- [Polyaxon](https://polyaxon.com/)
+
+# References
+- [Data Analysis and Machine Learning projects](https://github.com/rhiever/Data-Analysis-and-Machine-Learning-Projects)
