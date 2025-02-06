@@ -1,6 +1,5 @@
 # Data on WSL(Windows Subsystem for Linux)
-
-# Install Debian on WSL
+## Install Debian on WSL
 Open Settings > Apps > Programs and Features > Turn Windows features on or off dialog and select the *Windows Subsystem for Linux* to enable WSL on your system. You may reboot your system.
 
 ![enable-wsl](images/enable-wsl.png)
@@ -9,9 +8,9 @@ After you have enabled WSL, you can install linux distribution via Microsoft Sto
 
 To verify your install, open windows terminal or command terminal and run `wsl -l -v` command to list WSL distributions.
 
-# Setup Workspace
-## JupyterLab
-### Install Python
+## Setup Workspace
+### JupyterLab
+#### Install Python
 In this example, we will use jupyter notebook as primary interactive interface for AI, ML, Analytics examples. The runtime requiremet is Python 3.11.2 on Debian 12 linux. The first step is installing python and python virtual environment module:
 ```
 sudo apt update
@@ -25,7 +24,7 @@ edit ~/.bashrc
 alias python="/usr/bin/python3"
 ```
 
-### Activate your virtual environment and install Jupyter
+#### Activate your virtual environment and install Jupyter
 The next step is activating your python virtual environment for jupyter workspace. Under the cloned *data-lab-on-wsl* repositiry on your local environment, run source command to activate a new virtual environment:
 ```
 python -m venv .venv
@@ -37,14 +36,14 @@ After you are in your virtual environment, install jupyter package and dependenc
 (.venv) pip install -r requirements.txt
 ```
 
-### Launch Jupyter Lab
+#### Launch Jupyter Lab
 Launch a jupyter lab and open a web browser to access:
 ```
 (.venv) jupyter-lab --no-brower (--port 8080)
 ```
 
-## Apache Spark
-### Install Java
+### Apache Spark
+#### Install Java
 For Apache Spark, we need to install apache spark application. The runtime environment is OpenJDK 11 (or Amazon Corretto 11) on Debian 12 linux. The first step is installing java. The default JDK for Debian 12 is OpenJDK 11, and follow the instructions to install OpenJDK 11.
 ```
 sudo apt install default-jdk
@@ -65,7 +64,7 @@ sudo update-alternatives java
 Enter to keep the current selection[+], or type selection number:
 ```
 
-### Install Spark
+#### Install Spark
 After install java, you need to install spark. The spark version we will use for this example is 3.5.4. Download the binary package file:
 ```
 wget https://dlcdn.apache.org/spark/spark-3.5.4/spark-3.5.4-bin-hadoop3.tgz
@@ -94,7 +93,7 @@ For compatibility, you can also define environment variable settings in your *$H
 [[ -e ~/.profile ]] && emulate sh -c 'source ~/.profile'
 ```
 
-### Launch a Standalone Cluster
+#### Launch a Standalone Cluster
 Run your local standalone spark cluster:
 ```
 sh spark-ctl.sh -r
