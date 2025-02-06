@@ -1,6 +1,6 @@
 # Jupyter on WSL
 ## Examples
-### Learn PyTorch for Deep Learning Bootcamp
+### PyTorch for Deep Learning Bootcamp
 Clone the repository into the *data-lab-on-wsl/examples/jupyter* directory. And open each notebooks to follow the tutorials for pytorch deep learning course. For more details, please check out the [references](./README.md#references) at the bottom of this page.
 
 **NOTE** Make sure to clone the repository via SSH, not HTTP. Due to the large file size, you might see a gPRC error when you try to download the project over HTTP.
@@ -65,7 +65,11 @@ Open the `simple-llm-student-guide` notebook under the *data-lab-on-wsl/examples
 # Additional Resources
 - [Terraform: Amazon SageMaker](https://github.com/Young-ook/terraform-aws-sagemaker/tree/main/examples/blueprint)
 - [Terraform: Data on Amazon EKS](https://github.com/Young-ook/terraform-aws-eks/tree/main/examples/data-ai)
+- [PyTorch Tutorials](https://pytorch.org/tutorials/)
 - [Tensorflow Tutorials](https://www.tensorflow.org/tutorials)
+- [Kubeflow](https://www.kubeflow.org/)
+- [MLflow](https://mlflow.org/)
+- [Polyaxon](https://polyaxon.com/)
 
 # References
 - [PyTorch for Deep Learning Bootcamp](https://github.com/mrdbourke/pytorch-deep-learning).
