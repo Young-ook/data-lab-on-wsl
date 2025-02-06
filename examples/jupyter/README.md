@@ -1,15 +1,32 @@
 # Jupyter on WSL
 ## Examples
+### Learn PyTorch for Deep Learning Bootcamp
+Clone the repository into the *data-lab-on-wsl/examples/jupyter* directory. And open each notebooks to follow the tutorials for pytorch deep learning course. For more details, please check out the [references](./README.md#references) at the bottom of this page.
+
+**NOTE** Make sure to clone the repository via SSH, not HTTP. Due to the large file size, you might see a gPRC error when you try to download the project over HTTP.
+```
+git clone git@github.com:mrdbourke/pytorch-deep-learning.git
+```
+
+**NOTE** This example requires some packages such as *pytorch*. Please make sure to install these packages using PyPI or conda if you don't have before you run examples. For more details, please refer to the [PyTorch website](https://pytorch.org).
+```
+pip3 install torch torchvision torchaudio
+```
+
+![wsl-jupyter-dl-pytorch-bootcamp](../../images/wsl-jupyter-dl-pytorch-bootcamp.png)
+
 ### Randy Olson's Data Analysis and Machine Learning projects
-**Note** This example requires some packages such as *numpy, pandas, scikit-learn, matplotlib, seaborn, watermark*. Please make sure to install these packages using pip or conda if you don't have before you run examples. For more details, checkout the each example notebooks.
+This is a good project for learning data analysis and machine learning with hand-on. To run examples, clone the repository into the *data-lab-on-wsl/examples/jupyter* directory. And open and follow the instructions of each notebooks. For more details, please check out the [references](./README.md#references) at the bottom of this page.
+
+```
+git clone https://github.com/rhiever/Data-Analysis-and-Machine-Learning-Projects.git
+```
+
+**NOTE** This example requires some packages such as *numpy, pandas, scikit-learn, matplotlib, seaborn, watermark*. Please make sure to install these packages using pip or conda if you don't have before you run examples.
 ```
 pip install numpy pandas scikit-learn matplotlib seaborn watermark
 ```
 
-Move the *data-lab-on-wsl/examples/jupyter* directory and clone the project repository in your terminal. Then, open each notebooks to follow the tutorials for learning data analysis and machine learning.
-```
-git clone https://github.com/rhiever/Data-Analysis-and-Machine-Learning-Projects.git
-```
 ![wsl-jupyter-da-ml-randy](../../images/wsl-jupyter-da-ml-randy.png)
 
 ### MLOps (Machine Learning Operations)
@@ -40,7 +57,7 @@ If you are looking for the latest examples and advanced guide for MLflow, please
 git clone https://github.com/mlflow/mlflow.git
 ```
 
-![mlflow-web](../../images/mlflow-web.png)
+![mlflow-web](../../images/wsl-jupyter-mlflow-web.png)
 
 ### Simple LLM (Large Language Model)
 Open the `simple-llm-student-guide` notebook under the *data-lab-on-wsl/examples/jupyter/simple-llm* directory and follow the instructions.
@@ -54,4 +71,5 @@ Open the `simple-llm-student-guide` notebook under the *data-lab-on-wsl/examples
 - [Polyaxon](https://polyaxon.com/)
 
 # References
-- [Data Analysis and Machine Learning projects](https://github.com/rhiever/Data-Analysis-and-Machine-Learning-Projects)
+- [PyTorch for Deep Learning Bootcamp](https://github.com/mrdbourke/pytorch-deep-learning).
+- [Data Analysis and Machine Learning Projects](https://github.com/rhiever/Data-Analysis-and-Machine-Learning-Projects)
