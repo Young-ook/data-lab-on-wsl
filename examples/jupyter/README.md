@@ -1,7 +1,7 @@
 # Jupyter on WSL
 ## Examples
 ### PyTorch for Deep Learning Bootcamp
-Clone the repository into the *data-lab-on-wsl/examples/jupyter* directory. And open each notebooks to follow the tutorials for pytorch deep learning course. For more details, please check out the [references](./README.md#references) at the bottom of this page.
+Clone the repository into the *data-lab-on-wsl/examples/jupyter/extra* directory. If you have the *extra* directory you can create before you clone the repository using `mkdir -p extra`. To run hands-on labs, open each notebooks and follow the tutorials for pytorch deep learning course. For more details, please check out the [references](./README.md#references) at the bottom of this page.
 
 **NOTE** Make sure to clone the repository via SSH, not HTTP. Due to the large file size, you might see a gPRC error when you try to download the project over HTTP.
 ```
@@ -16,7 +16,7 @@ pip3 install torch torchvision torchaudio
 ![wsl-jupyter-dl-pytorch-bootcamp](../../images/wsl-jupyter-dl-pytorch-bootcamp.png)
 
 ### Randy Olson's Data Analysis and Machine Learning projects
-This is a good project for learning data analysis and machine learning with hand-on. To run examples, clone the repository into the *data-lab-on-wsl/examples/jupyter* directory. And open and follow the instructions of each notebooks. For more details, please check out the [references](./README.md#references) at the bottom of this page.
+This is a good project for learning data analysis and machine learning with hand-on. To run examples, clone the repository under the *data-lab-on-wsl/examples/jupyter/extra* directory. Please create *extra* directory if you don't have. Open and follow the instructions of each notebooks. For more details, please check out the [references](./README.md#references) at the bottom of this page.
 
 ```
 git clone https://github.com/rhiever/Data-Analysis-and-Machine-Learning-Projects.git
@@ -50,9 +50,9 @@ MLOps, or machine learning operations, is a set of practices that help manage th
 
 In summary, *Kubeflow* is more focused on orchestration and deployment of ML workflows in Kubernetes environments, while *MLflow* is centered around experiment tracking and model management. The choice between them depends on your specific needs and infrastructure.
 
-With MLflow example, you can learn how to enable MLflow service and integrate with Jupyter notebook for machine learning lifecycle management. Open the `ml-ops-mlflow` notebook under the *data-lab-on-wsl/examples/jupyter/ml-ops* directory and follow the instructions.
+With MLflow example, you can learn how to enable MLflow service and integrate with Jupyter notebook for machine learning lifecycle management. Open the `mlflow.ipynb` notebook under the *data-lab-on-wsl/examples/jupyter/ml-ops* directory and follow the instructions.
 
-If you are looking for the latest examples and advanced guide for MLflow, please refer to [the official repository](https://github.com/mlflow/mlflow) of mlflow opensource project. You can clone the mlflow into the *data-lab-on-wsl/examples/jupyter/ml-ops* directory and run examples by following the intructions of the jupyter notebooks under the example directory.
+If you are looking for the latest examples and advanced guide for MLflow, please refer to [the official repository](https://github.com/mlflow/mlflow) of mlflow opensource project. You can clone the mlflow into the *data-lab-on-wsl/examples/jupyter/extra* directory and run examples by following the intructions of the jupyter notebooks under the example directory. If you don't have *extra* directory, you can create `mkdir -p extra`.
 ```
 git clone https://github.com/mlflow/mlflow.git
 ```
