@@ -29,10 +29,10 @@ pip install numpy pandas scikit-learn matplotlib seaborn watermark
 
 ![wsl-jupyter-da-ml-randy](../../images/wsl-jupyter-da-ml-randy.png)
 
-### MLOps (Machine Learning Operations)
-MLOps, or machine learning operations, is a set of practices that help manage the machine learning (ML) lifecycle. It's a combination of machine learning development and system operations. With MLOps, data scientist and data engineers can 1/ automate the process of building, deploying, and maintaining ML models, 2/ ensure that ML models are reliable, efficient, and deliver value, 3/ help organizations implement ML models into production. Therefore, the MLOps solutions provide experiment tracking, data preparation, feature engineering, model training, model deployment, model monitoring, evaluation, model retraining, and governance. Both Kubeflow and MLflow are popular open-source tools used in the field of MLOps, but they serve slightly different purposes and have different strengths. Here is a brief comparison:
+### MLflow
+MLOps(Machine Learning Operations) is a set of practices that help manage the machine learning (ML) lifecycle. It's a combination of machine learning development and system operations. With MLOps, data scientist and data engineers can 1/ automate the process of building, deploying, and maintaining ML models, 2/ ensure that ML models are reliable, efficient, and deliver value, 3/ help organizations implement ML models into production. Therefore, the MLOps solutions provide experiment tracking, data preparation, feature engineering, model training, model deployment, model monitoring, evaluation, model retraining, and governance. Both Kubeflow and MLflow are popular open-source tools used in the field of MLOps, but they serve slightly different purposes and have different strengths. Here is a brief comparison:
 
-- **Kubeflow** is a cloud-native framework designed to simplify the adoption of ML in containerized environments on Kubernetes.
+- **Kubeflow** is a cloud-native open-source framework designed to simplify the adoption of ML in containerized environments on Kubernetes.
   - Key features:
     - Pipelines: Enables orchestration of complex ML workflows.
     - KServe: Tool for deploying and serving ML models in a serverless manner.
@@ -40,7 +40,7 @@ MLOps, or machine learning operations, is a set of practices that help manage th
     - Notebooks: Integrated development environments for interactive Jupyter notebooks.
   - Use cases: Ideal for organizations that need to deploy ML models at scale and already use Kubernetes.
 
-- **MLflow** is a platform for managing the entire ML lifecycle, including experiment tracking, packaging code into reproducible runs, and managing model deployment.
+- **MLflow** is an open-source platform, purpose-built to assist machine learning practitioners and teams in managing the complexities of the entire ML lifecycle, including experiment tracking, packaging code into reproducible runs, and managing model deployment.
   - Key features:
     - MLflow Tracking: API and UI for logging parameters, metrics, artifacts, and code versions.
     - Projects: Standard format for packaging reusable code.
@@ -50,14 +50,84 @@ MLOps, or machine learning operations, is a set of practices that help manage th
 
 In summary, *Kubeflow* is more focused on orchestration and deployment of ML workflows in Kubernetes environments, while *MLflow* is centered around experiment tracking and model management. The choice between them depends on your specific needs and infrastructure.
 
-With MLflow example, you can learn how to enable MLflow service and integrate with Jupyter notebook for machine learning lifecycle management. Open the `mlflow.ipynb` notebook under the *data-lab-on-wsl/examples/jupyter/ml-ops* directory and follow the instructions.
+#### Install MLflow
+**[Don't Forget]** to make sure that you've activated the python virtual environment with `source .venv/bin/activate` in the *data-lab-on-wsl* local directory.
 
-If you are looking for the latest examples and advanced guide for MLflow, please refer to [the official repository](https://github.com/mlflow/mlflow) of mlflow opensource project. You can clone the mlflow into the *data-lab-on-wsl/examples/jupyter/extra* directory and run examples by following the intructions of the jupyter notebooks under the example directory. If you don't have *extra* directory, you can create `mkdir -p extra`.
+You might have installed MLflow when you tried to install the Jupyter using `requirements.txt`, but if not, install MLflow from PyPI(Python Package Index). Open a terminal and activate the same virtual environment where we are running Jupyter, and install mlflow package: `pip install mlflow==2.20.0`. The version we will use in this example is 2.20.0. If you want to install the latest version of MLflow, just run command without specific version: `pip install mlflow`.
+
+#### Running ML experiments with MLflow Tracking Server
+MLflow Tracking Server is a centralized HTTP server that allows you to access your experiments artifacts regardless of where you run your code. To use the Tracking Server, you can either run it locally or use a managed service. Additionally, MLflow is a vendor-neutral, open-source platform which means you have access to the MLflow’s core capabilities sets such as tracking, evaluation, observability, and more, regardless of where you are doing machine learning.
+
+**NOTE** This local tracking server is simple and easy to use for testing or practice, but we recommend running a remote MLflow tracking server for use in production. Please refer to the [MLflow Tracking Server guide](https://mlflow.org/docs/latest/tracking/server.html) for more infromation about how to enable persistent backend or add upsteam proxy, or change other configurations.
+
+To start the local tracking server, move to the *data-lab-on-wsl/examples/jupyter/ml-ops* in a terminal with the virtual environment activated and run the `mlflow server` CLI command. By default, the tracking server will be running at `http://localhost:5000` and you can change the host name and port number using parameters: `mlflow server --host 127.0.0.1 --port 5000`. We'll use the MLflow fluent API to perform all interactions with the tracking server.
+
+Now you can start to learn how to integrate MLflow and Jupyter notebook for MLOps. Open the `mlflow.ipynb` notebook under the *data-lab-on-wsl/examples/jupyter/ml-ops* directory and follow the instructions. After you finished the lab, you will see `mlartifacts` and `mlruns` directories createdy by MLflow Tracking Server.
+
+#### Addtional MLflow Examples
+If you are looking for the latest examples and advanced guide for MLflow, you can follow the instructions from [the official MLflow repository](https://github.com/mlflow/mlflow). Clone the mlflow into the *data-lab-on-wsl/examples/jupyter/extra* directory and run examples by following the intructions of each jupyter notebooks under the example directory. You should make a *extra* directory where to clone the mlflow examples if you don't have it on your workspace.
 ```
 git clone https://github.com/mlflow/mlflow.git
 ```
 
 ![mlflow-web](../../images/wsl-jupyter-mlflow-web.png)
+
+#### Install Apache Airflow
+MLflow excels at managing the machine learning lifecycle, including experiment tracking, model management, and serving. However, it doesn't provide powerful features for workflow management and automation and ideal capabilities for orchestrating complex data pipelines. Apache Airflow, on the other hand, is an open-source platform for developing, scheduling, and monitoring batch-oriented workflows. Airflow’s extensible Python framework enables you to build workflows connecting with virtually any technology. A web interface helps manage the state of your workflows. MLflow and Airflow are two pivotal tools in the MLOps ecosystem, each serving distinct purposes that complement one another when integrated. In this example, we will learn how to integrate Airflow and MLflow for automatic ML lifecycle management.
+
+**[Don't Forget]** to make sure that you've activated the python virtual environment with `source .venv/bin/activate` in the *data-lab-on-wsl* local directory.
+
+##### (Optional) Set Airlfow home directory
+The first time you run Airflow, it will create a file called `airflow.cfg` in your `AIRFLOW_HOME` directory (~/airflow by default). The `AIRFLOW_HOME` environment variable is used to inform Airflow of the desired location. This step of setting the environment variable should be done before installing Airflow so that the installation process knows where to store the necessary files. If you want to change the home directory for Airflow, move to the *data-lab-on-wsl/examples/jupyter/ml-ops* directory (or where you want) and configure the environment variable before you begin to install.
+```
+export AIRFLOW_HOME=$PWD/airflow
+```
+
+##### Install Airflow using the constraints file, which is determined based on the URL we pass
+Run the below where the same virtual environment Jupyter is running Jupyter. In this example we will install version 2.10.4, but if you always want to install the latest version, just remove the version from the pip install command (`pip install apache-airflow`).
+```
+AIRFLOW_VERSION=2.10.4
+
+# Extract the version of Python you have installed. If you're currently using a Python version that is not supported by Airflow, you may want to set this manually.
+# See above for supported versions.
+PYTHON_VERSION="$(python -c 'import sys; print(f"{sys.version_info.major}.{sys.version_info.minor}")')"
+
+CONSTRAINT_URL="https://raw.githubusercontent.com/apache/airflow/constraints-${AIRFLOW_VERSION}/constraints-${PYTHON_VERSION}.txt"
+# For example this would install 2.10.4 with python 3.8: https://raw.githubusercontent.com/apache/airflow/constraints-2.10.4/constraints-3.8.txt
+
+pip install "apache-airflow==${AIRFLOW_VERSION}" --constraint "${CONSTRAINT_URL}"
+```
+
+##### Run Airflow Standalone
+The `airflow standalone` command initializes the database, creates a user, and starts all components.
+
+##### Access Airflow
+Visit `localhost:8080` in your browser and log in with the admin account details shown in the terminal.
+
+![wsl-jupyter-airflow-login](../../images/wsl-jupyter-airflow-login.png)
+
+You can override default configurations using environment variables, see [Configuration Reference](https://airflow.apache.org/docs/apache-airflow/stable/configurations-ref.html). You can inspect the file either in `$AIRFLOW_HOME/airflow.cfg`, or through the UI in the `Admin->Configuration` menu. The PID file for the webserver will be stored in `$AIRFLOW_HOME/airflow-webserver.pid` or in `/run/airflow/webserver.pid` if started by systemd.
+
+If you want to run the individual parts of Airflow manually rather than using the all-in-one standalone command, you can instead run:
+```
+airflow db migrate
+
+airflow users create --username admin --firstname FIRST_NAME --lastname LAST_NAME --role Admin --email admin@example.org
+Password:
+
+airflow webserver --port 8080
+airflow scheduler
+```
+
+For more information, please refer to the below.
+- [Apache Airflow Quick Start](https://airflow.apache.org/docs/apache-airflow/stable/start.html)
+- [Install from PyPI](https://airflow.apache.org/docs/apache-airflow/stable/installation/installing-from-pypi.html)
+- [Installation of Airflow](https://airflow.apache.org/docs/apache-airflow/stable/installation/index.html)
+
+**NOTE** This local system is simple and easy to use for testing or practice, but we recommend enable security, governance, monitoring, reverse proxing, persistent backend and more for use in production. Please refer to the [Production Deployment](https://airflow.apache.org/docs/apache-airflow/stable/administration-and-deployment/production-deployment.html).
+
+#### Integrate MLflow with Apache Airflow
+
 
 ### Simple LLM (Large Language Model)
 Open the `simple-llm-student-guide` notebook under the *data-lab-on-wsl/examples/jupyter/simple-llm* directory and follow the instructions.
