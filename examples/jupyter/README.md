@@ -86,6 +86,7 @@ Open the `simple-llm-student-guide` notebook under the *data-lab-on-wsl/examples
 - [Kubeflow](https://www.kubeflow.org/)
 - [MLflow](https://mlflow.org/)
 - [Polyaxon](https://polyaxon.com/)
+- [ZenML](https://www.zenml.io/)
 
 # References
 - [PyTorch for Deep Learning Bootcamp](https://github.com/mrdbourke/pytorch-deep-learning).
