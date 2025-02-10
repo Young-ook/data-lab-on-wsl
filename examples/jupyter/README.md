@@ -78,10 +78,7 @@ MLflow excels at managing the machine learning lifecycle, including experiment t
 **[Don't Forget]** to make sure that you've activated the python virtual environment with `source .venv/bin/activate` in the *data-lab-on-wsl* local directory.
 
 ##### (Optional) Set Airlfow home directory
-The first time you run Airflow, it will create a file called `airflow.cfg` in your `AIRFLOW_HOME` directory (~/airflow by default). The `AIRFLOW_HOME` environment variable is used to inform Airflow of the desired location. This step of setting the environment variable should be done before installing Airflow so that the installation process knows where to store the necessary files. If you want to change the home directory for Airflow, move to the *data-lab-on-wsl/examples/jupyter/ml-ops* directory (or where you want) and configure the environment variable before you begin to install.
-```
-export AIRFLOW_HOME=$PWD/airflow
-```
+The first time you run Airflow, it will create a file called `airflow.cfg` in your `AIRFLOW_HOME` directory (~/airflow by default). The `AIRFLOW_HOME` environment variable is used to inform Airflow of the desired location. This step of setting the environment variable should be done before installing Airflow so that the installation process knows where to store the necessary files. You can put all togather in the example directory. Go to the *data-lab-on-wsl/examples/jupyter/ml-ops* and configure the environment variable: `export AIRFLOW_HOME=$PWD/airflow`. Or, you may define the home directory to a similar path commonly used by other tools: `export AIRFLOW_HOME=$HOME/.airflow`
 
 ##### Install Airflow using the constraints file, which is determined based on the URL we pass
 Run the below where the same virtual environment Jupyter is running Jupyter. In this example we will install version 2.10.4, but if you always want to install the latest version, just remove the version from the pip install command (`pip install apache-airflow`).
