@@ -143,11 +143,6 @@ airflow webserver --port 8080
 airflow scheduler
 ```
 
-For more information, please refer to the below.
-- [Apache Airflow Quick Start](https://airflow.apache.org/docs/apache-airflow/stable/start.html)
-- [Install from PyPI](https://airflow.apache.org/docs/apache-airflow/stable/installation/installing-from-pypi.html)
-- [Installation of Airflow](https://airflow.apache.org/docs/apache-airflow/stable/installation/index.html)
-
 **NOTE** This local system is simple and easy to use for testing or practice, but we recommend enable security, governance, monitoring, reverse proxing, persistent backend and more for use in production. Please refer to the [Production Deployment](https://airflow.apache.org/docs/apache-airflow/stable/administration-and-deployment/production-deployment.html).
 
 # Examples
