@@ -20,14 +20,14 @@ The DAGs list may not update, and new tasks will not be scheduled.
 ```
 
 #### Simple DAG
-Create a new directory to save the user created DAG file. This DAGs file repository is configured as `dags_folder` variable in the `airflow.cfg` file and the default path is `$HOME/airflow/dags`.
+Create a new directory to save the user created DAG file. This DAGs file repository is configured as `dags_folder` variable in the `airflow.cfg` file and the default path is `~/airflow/dags` (same as `$HOME/airflow/dags`).
 ```
-mkdir -p ~/airflow/dags   # or $HOME/airflow/dags
+mkdir -p $HOME/airflow/dags
 ```
 
 And, copy the example DAG file into the direcotry. You will see the `greetings` in *DAGs* when you back to the Airflow.
 ```
-cp data-lab-on-wsl/examples/airflow/dags/greeting_dag.py ~/airflow/dags/
+cp data-lab-on-wsl/examples/airflow/dags/greeting_dag.py $HOME/airflow/dags/
 ```
 
 ![wsl-airflow-dag-list](../../images/wsl-airflow-dag-list.png)
