@@ -11,7 +11,7 @@ Alos, you can override default configurations using environment variables, see [
 Restart Airflow standalone: `airflow standalone`. Visit `localhost:8080` in your browser and log in with the admin account details (user name and automatically generated password) shown in the terminal.
 
 Once logged in, go to the *Cluster Activity*, and verify your Airflow standalone cluster is healty.
-![wsl-jupyter-airflow-cluster-status](../../images/wsl-jupyter-airflow-cluster-status.png)
+![wsl-airflow-cluster-status](../../images/wsl-airflow-cluster-status.png)
 
 You may see an error message on the *Cluster Activity*. This could be due to insufficient available memory. Please make sure your system has enough free memory (recommended minimum memory is 4GB) and restart your Airflow standalone cluster.
 ```
