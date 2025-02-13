@@ -5,6 +5,8 @@ Visit `localhost:8080` in your browser and log in with the admin account details
 ![wsl-jupyter-airflow-login](../../images/wsl-jupyter-airflow-login.png)
 
 ## Integrate MLflow with Airflow
+MLflow excels at managing the machine learning lifecycle, including experiment tracking, model management, and serving. However, it doesn't provide powerful features for workflow management and automation and ideal capabilities for orchestrating complex data pipelines. Apache Airflow, on the other hand, is an open-source platform for developing, scheduling, and monitoring batch-oriented workflows. Airflow’s extensible Python framework enables you to build workflows connecting with virtually any technology. A web interface helps manage the state of your workflows. MLflow and Airflow are two pivotal tools in the MLOps ecosystem, each serving distinct purposes that complement one another when integrated. In this example, we will learn how to integrate Airflow and MLflow for automatic ML lifecycle management.
+
 Go to the *Cluster Activity*, and verify your Airflow standalone cluster is healty.
 ![wsl-jupyter-airflow-cluster-status](../../images/wsl-jupyter-airflow-cluster-status.png)
 
