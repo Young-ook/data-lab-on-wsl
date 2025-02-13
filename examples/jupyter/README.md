@@ -53,7 +53,7 @@ In summary, *Kubeflow* is more focused on orchestration and deployment of ML wor
 #### Install MLflow
 **[Don't Forget]** to make sure that you've activated the python virtual environment with `source .venv/bin/activate` in the *data-lab-on-wsl* local directory.
 
-You might have installed MLflow when you tried to install the Jupyter using `requirements.txt`, but if not, install MLflow from PyPI(Python Package Index). Open a terminal and activate the same virtual environment where we are running Jupyter, and install mlflow package: `pip install mlflow==2.20.0`. The version we will use in this example is 2.20.0. If you want to install the latest version of MLflow, just run command without specific version: `pip install mlflow`.
+You might have installed MLflow when you tried to install the Jupyter using `requirements.txt`, but if not, install MLflow from PyPI(Python Package Index). Open a terminal and activate the same virtual environment where we are running Jupyter, and install MLflow package: `pip install mlflow==2.20.0`. The version we will use in this example is 2.20.0. If you want to install the latest version of MLflow, just run command without specific version: `pip install mlflow`.
 
 #### Running ML experiments with MLflow Tracking Server
 MLflow Tracking Server is a centralized HTTP server that allows you to access your experiments artifacts regardless of where you run your code. To use the Tracking Server, you can either run it locally or use a managed service. Additionally, MLflow is a vendor-neutral, open-source platform which means you have access to the MLflow’s core capabilities sets such as tracking, evaluation, observability, and more, regardless of where you are doing machine learning.
@@ -72,15 +72,22 @@ git clone https://github.com/mlflow/mlflow.git
 
 ![mlflow-web](../../images/wsl-jupyter-mlflow-web.png)
 
-#### Install Apache Airflow
+#### Running ML pipelines with MLflow and Airflow
+##### Install Apache Airflow
 MLflow excels at managing the machine learning lifecycle, including experiment tracking, model management, and serving. However, it doesn't provide powerful features for workflow management and automation and ideal capabilities for orchestrating complex data pipelines. Apache Airflow, on the other hand, is an open-source platform for developing, scheduling, and monitoring batch-oriented workflows. Airflow’s extensible Python framework enables you to build workflows connecting with virtually any technology. A web interface helps manage the state of your workflows. MLflow and Airflow are two pivotal tools in the MLOps ecosystem, each serving distinct purposes that complement one another when integrated. In this example, we will learn how to integrate Airflow and MLflow for automatic ML lifecycle management.
+
+You might have installed Airflow when you tried to install the Jupyter using `requirements.txt`, but if not, follow the *(Optional) Set Airlfow home directory* and *Install Airflow using the constraints file, which is determined based on the URL we pass* steps to install Airflow from PyPI(Python Package Index).
 
 **[Don't Forget]** to make sure that you've activated the python virtual environment with `source .venv/bin/activate` in the *data-lab-on-wsl* local directory.
 
-##### (Optional) Set Airlfow home directory
-The first time you run Airflow, it will create a file called `airflow.cfg` in your `AIRFLOW_HOME` directory (~/airflow by default). The `AIRFLOW_HOME` environment variable is used to inform Airflow of the desired location. This step of setting the environment variable should be done before installing Airflow so that the installation process knows where to store the necessary files. You can put all togather in the example directory. Go to the *data-lab-on-wsl/examples/jupyter/ml-ops* and configure the environment variable: `export AIRFLOW_HOME=$PWD/airflow`. Or, you may define the home directory to a similar path commonly used by other tools: `export AIRFLOW_HOME=$HOME/.airflow`
+**(Optional) Set Airlfow home directory**
 
-##### Install Airflow using the constraints file, which is determined based on the URL we pass
+The first time you run Airflow, it will create a file called `airflow.cfg` in your `AIRFLOW_HOME` directory (`$HOME/airflow` by default). The `AIRFLOW_HOME` environment variable is used to inform Airflow of the desired location. This step of setting the environment variable should be done before installing Airflow so that the installation process knows where to store the necessary files. You can put all togather in the example directory. Go to the *data-lab-on-wsl/examples/jupyter/ml-ops* and configure the environment variable: `export AIRFLOW_HOME=$PWD/airflow`. Or, you may define the home directory to a similar path commonly used by other tools: `export AIRFLOW_HOME=$HOME/.airflow`
+
+In this example, we will use the default configuration, skip for now.
+
+**Install Airflow using the constraints file, which is determined based on the URL we pass**
+
 Run the below where the same virtual environment Jupyter is running Jupyter. In this example we will install version 2.10.4, but if you always want to install the latest version, just remove the version from the pip install command (`pip install apache-airflow`).
 ```
 AIRFLOW_VERSION=2.10.4
@@ -96,10 +103,12 @@ pip install "apache-airflow==${AIRFLOW_VERSION}" #--constraint "${CONSTRAINT_URL
 ```
 
 ##### Run Airflow Standalone
-The `airflow standalone` command initializes the database, creates a user, and starts all components.
+Open the Airflow configuration file `$HOME/airflow/airflow.cfg` (or if you customized your Airflow home directory, open the `$AIRFLOW_HOME/airflow.cfg`). And turn off to load default examples: `load_examples = False`.
+
+Run `airflow standalone` command to initialize the database, creates a user, and starts all components at once.
 
 ##### Access Airflow
-Visit `localhost:8080` in your browser and log in with the admin account details shown in the terminal.
+Visit `localhost:8080` in your browser and log in with the admin account details (user name and automatically generated password) shown in the terminal.
 
 ![wsl-jupyter-airflow-login](../../images/wsl-jupyter-airflow-login.png)
 
@@ -121,10 +130,30 @@ For more information, please refer to the below.
 - [Install from PyPI](https://airflow.apache.org/docs/apache-airflow/stable/installation/installing-from-pypi.html)
 - [Installation of Airflow](https://airflow.apache.org/docs/apache-airflow/stable/installation/index.html)
 
+
 **NOTE** This local system is simple and easy to use for testing or practice, but we recommend enable security, governance, monitoring, reverse proxing, persistent backend and more for use in production. Please refer to the [Production Deployment](https://airflow.apache.org/docs/apache-airflow/stable/administration-and-deployment/production-deployment.html).
 
-#### Integrate MLflow with Apache Airflow
+##### Integrate MLflow with Apache Airflow
+Go to the *Cluster Activity*, and verify your Airflow standalone cluster is healty.
+![wsl-jupyter-airflow-cluster-status](../../images/wsl-jupyter-airflow-cluster-status.png)
 
+If you see an error message on the *Cluster Activity*, please restart your Airflow.
+```
+The scheduler does not appear to be running. Last heartbeat was received a few seconds ago.
+The DAGs list may not update, and new tasks will not be scheduled.
+```
+
+Then, create a new directory to save the user created DAG file. This DAGs file repository is configured as `dags_folder` variable in the `airflow.cfg` file and the default path is `$HOME/airflow/dags`.
+```
+mkdir -p ~/airflow/dags   # or $HOME/airflow/dags
+```
+
+And, copy the example DAG file into the direcotry
+```
+cp data-lab-on-wsl/examples/jupyter/ml-ops/dags/greeting_dag.py ~/airflow/dags/
+```
+
+You will see the `greetings` in *DAGs* when you back to the Airflow.
 
 ### Simple LLM (Large Language Model)
 Open the `simple-llm-student-guide` notebook under the *data-lab-on-wsl/examples/jupyter/simple-llm* directory and follow the instructions.
