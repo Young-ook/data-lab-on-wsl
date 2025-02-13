@@ -11,7 +11,7 @@ Visit `localhost:8080` in your browser and log in with the admin account details
 Go to the *Cluster Activity*, and verify your Airflow standalone cluster is healty.
 ![wsl-jupyter-airflow-cluster-status](../../images/wsl-jupyter-airflow-cluster-status.png)
 
-If you see an error message on the *Cluster Activity*, please restart your Airflow.
+You may see an error message on the *Cluster Activity*. This could be due to insufficient available memory. Please make sure your system has enough free memory (recommended minimum memory is 4GB) and restart your Airflow standalone cluster.
 ```
 The scheduler does not appear to be running. Last heartbeat was received a few seconds ago.
 The DAGs list may not update, and new tasks will not be scheduled.
