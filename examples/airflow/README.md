@@ -25,7 +25,7 @@ mkdir -p ~/airflow/dags   # or $HOME/airflow/dags
 
 And, copy the example DAG file into the direcotry. You will see the `greetings` in *DAGs* when you back to the Airflow.
 ```
-cp data-lab-on-wsl/examples/jupyter/ml-ops/dags/greeting_dag.py ~/airflow/dags/
+cp data-lab-on-wsl/examples/airflow/dags/greeting_dag.py ~/airflow/dags/
 ```
 
 # Additional Resources
