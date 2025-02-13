@@ -10,9 +10,7 @@ Alos, you can override default configurations using environment variables, see [
 
 Restart Airflow standalone: `airflow standalone`. Visit `localhost:8080` in your browser and log in with the admin account details (user name and automatically generated password) shown in the terminal.
 
-![wsl-jupyter-airflow-login](../../images/wsl-jupyter-airflow-login.png)
-
-Go to the *Cluster Activity*, and verify your Airflow standalone cluster is healty.
+Once logged in, go to the *Cluster Activity*, and verify your Airflow standalone cluster is healty.
 ![wsl-jupyter-airflow-cluster-status](../../images/wsl-jupyter-airflow-cluster-status.png)
 
 You may see an error message on the *Cluster Activity*. This could be due to insufficient available memory. Please make sure your system has enough free memory (recommended minimum memory is 4GB) and restart your Airflow standalone cluster.
@@ -31,6 +29,9 @@ And, copy the example DAG file into the direcotry. You will see the `greetings` 
 ```
 cp data-lab-on-wsl/examples/airflow/dags/greeting_dag.py ~/airflow/dags/
 ```
+
+![wsl-airflow-dag-list](../../images/wsl-airflow-dag-list.png)
+![wsl-airflow-dag-greetings](../../images/wsl-airflow-dag-greetings.png)
 
 # Additional Resources
 
