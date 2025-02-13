@@ -4,20 +4,7 @@ Visit `localhost:8080` in your browser and log in with the admin account details
 
 ![wsl-jupyter-airflow-login](../../images/wsl-jupyter-airflow-login.png)
 
-You can override default configurations using environment variables, see [Configuration Reference](https://airflow.apache.org/docs/apache-airflow/stable/configurations-ref.html). You can inspect the file either in `$AIRFLOW_HOME/airflow.cfg`, or through the UI in the `Admin->Configuration` menu. The PID file for the webserver will be stored in `$AIRFLOW_HOME/airflow-webserver.pid` or in `/run/airflow/webserver.pid` if started by systemd.
-
-If you want to run the individual parts of Airflow manually rather than using the all-in-one standalone command, you can instead run:
-```
-airflow db migrate
-
-airflow users create --username admin --firstname FIRST_NAME --lastname LAST_NAME --role Admin --email admin@example.org
-Password:
-
-airflow webserver --port 8080
-airflow scheduler
-```
-
-## Integrate MLflow with Apache Airflow
+## Integrate MLflow with Airflow
 Go to the *Cluster Activity*, and verify your Airflow standalone cluster is healty.
 ![wsl-jupyter-airflow-cluster-status](../../images/wsl-jupyter-airflow-cluster-status.png)
 
