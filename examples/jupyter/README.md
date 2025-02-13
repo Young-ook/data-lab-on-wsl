@@ -73,7 +73,7 @@ git clone https://github.com/mlflow/mlflow.git
 ![mlflow-web](../../images/wsl-jupyter-mlflow-web.png)
 
 #### Running ML pipelines with MLflow and Airflow
-This is the [Airflow example how to integrate with MLflow for MLOps](../airflow/README.md)
+- [MLOps with MLflow and Airflow](../airflow/README.md#mlops-with-mlflow-and-airflow)
 
 ### Simple LLM (Large Language Model)
 Open the `simple-llm-student-guide` notebook under the *data-lab-on-wsl/examples/jupyter/simple-llm* directory and follow the instructions.
