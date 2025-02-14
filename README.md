@@ -150,12 +150,12 @@ airflow scheduler
 - [Spark](examples/spark/README.md)
 
 # Clean up
-You can stop and terminate the running juypter by simply pressing `ctrl+c` and following the instructions that appear. Then, type `deactivate` to exit the virtual environment:
+You can stop and terminate the running Juypter and Airflow by simply pressing `ctrl+c` and following the instructions that appear. Then, type `deactivate` to exit the virtual environment:
 ```
 (.venv) deactivate
 ```
 
-Then, you can stop your local standalone spark cluster after your spark job was finished:
+Then, you can stop your local standalone Spark cluster after your Spark job was finished:
 ```
 sh spark-ctl.sh -t
 ```
