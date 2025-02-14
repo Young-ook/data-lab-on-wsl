@@ -19,19 +19,18 @@ The scheduler does not appear to be running. Last heartbeat was received a few s
 The DAGs list may not update, and new tasks will not be scheduled.
 ```
 
-#### Simple DAG
-Create a new directory to save the user created DAG file. This DAGs file repository is configured as `dags_folder` variable in the `airflow.cfg` file and the default path is `~/airflow/dags` (same as `$HOME/airflow/dags`).
+#### Workflow Management with DAG(Directed Acyclic Graph)
+A DAG is the core concept of Airflow, collecting Tasks together, organized with dependencies and relationships to say how they should run. This DAG file repository is configured as `dags_folder` variable in the `airflow.cfg` file and the default path is `~/airflow/dags` (same as `$HOME/airflow/dags`). Copy the dags directory from the cloned repository into the Airflow home direcotry.
 ```
-mkdir -p $HOME/airflow/dags
-```
-
-And, copy the example DAG file into the direcotry. You will see the `greetings` in *DAGs* when you back to the Airflow.
-```
-cp data-lab-on-wsl/examples/airflow/dags/greeting_dag.py $HOME/airflow/dags/
+cp -r data-lab-on-wsl/examples/airflow/dags $HOME/airflow/
 ```
 
+You will see the `greetings` and `ml_train` in the *DAGs* when you back to the Airflow. With these DAGs, you can see how Airflow works and how to integrate Airflow and MLflow for ML workflow management. Go to the *DAGs* and run DAGs you want.
 ![wsl-airflow-dag-list](../../images/wsl-airflow-dag-list.png)
-![wsl-airflow-dag-greetings](../../images/wsl-airflow-dag-greetings.png)
+![wsl-airflow-mlflow-dag](../../images/wsl-airflow-mlflow-dag.png)
+
+If the ML pipeline was successfully finished, you can see the a new experiment has been recorded in MLflow Tracking Server. Access `localhost:5000` to see the latest experiment *airflow* registred as the source.
+![wsl-airflow-mlflow-exp](../../images/wsl-airflow-mlflow-exp.png)
 
 # Additional Resources
 
