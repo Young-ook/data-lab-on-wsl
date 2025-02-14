@@ -29,10 +29,10 @@ pip install numpy pandas scikit-learn matplotlib seaborn watermark
 
 ![wsl-jupyter-da-ml-randy](../../images/wsl-jupyter-da-ml-randy.png)
 
-### MLOps (Machine Learning Operations)
-MLOps, or machine learning operations, is a set of practices that help manage the machine learning (ML) lifecycle. It's a combination of machine learning development and system operations. With MLOps, data scientist and data engineers can 1/ automate the process of building, deploying, and maintaining ML models, 2/ ensure that ML models are reliable, efficient, and deliver value, 3/ help organizations implement ML models into production. Therefore, the MLOps solutions provide experiment tracking, data preparation, feature engineering, model training, model deployment, model monitoring, evaluation, model retraining, and governance. Both Kubeflow and MLflow are popular open-source tools used in the field of MLOps, but they serve slightly different purposes and have different strengths. Here is a brief comparison:
+### MLflow
+MLOps(Machine Learning Operations) is a set of practices that help manage the machine learning (ML) lifecycle. It's a combination of machine learning development and system operations. With MLOps, data scientist and data engineers can 1/ automate the process of building, deploying, and maintaining ML models, 2/ ensure that ML models are reliable, efficient, and deliver value, 3/ help organizations implement ML models into production. Therefore, the MLOps solutions provide experiment tracking, data preparation, feature engineering, model training, model deployment, model monitoring, evaluation, model retraining, and governance. Both Kubeflow and MLflow are popular open-source tools used in the field of MLOps, but they serve slightly different purposes and have different strengths. Here is a brief comparison:
 
-- **Kubeflow** is a cloud-native framework designed to simplify the adoption of ML in containerized environments on Kubernetes.
+- **Kubeflow** is a cloud-native open-source framework designed to simplify the adoption of ML in containerized environments on Kubernetes.
   - Key features:
     - Pipelines: Enables orchestration of complex ML workflows.
     - KServe: Tool for deploying and serving ML models in a serverless manner.
@@ -40,7 +40,7 @@ MLOps, or machine learning operations, is a set of practices that help manage th
     - Notebooks: Integrated development environments for interactive Jupyter notebooks.
   - Use cases: Ideal for organizations that need to deploy ML models at scale and already use Kubernetes.
 
-- **MLflow** is a platform for managing the entire ML lifecycle, including experiment tracking, packaging code into reproducible runs, and managing model deployment.
+- **MLflow** is an open-source platform, purpose-built to assist machine learning practitioners and teams in managing the complexities of the entire ML lifecycle, including experiment tracking, packaging code into reproducible runs, and managing model deployment.
   - Key features:
     - MLflow Tracking: API and UI for logging parameters, metrics, artifacts, and code versions.
     - Projects: Standard format for packaging reusable code.
@@ -50,14 +50,30 @@ MLOps, or machine learning operations, is a set of practices that help manage th
 
 In summary, *Kubeflow* is more focused on orchestration and deployment of ML workflows in Kubernetes environments, while *MLflow* is centered around experiment tracking and model management. The choice between them depends on your specific needs and infrastructure.
 
-With MLflow example, you can learn how to enable MLflow service and integrate with Jupyter notebook for machine learning lifecycle management. Open the `mlflow.ipynb` notebook under the *data-lab-on-wsl/examples/jupyter/ml-ops* directory and follow the instructions.
+#### Install MLflow
+**[Don't Forget]** to make sure that you've activated the python virtual environment with `source .venv/bin/activate` in the *data-lab-on-wsl* local directory.
 
-If you are looking for the latest examples and advanced guide for MLflow, please refer to [the official repository](https://github.com/mlflow/mlflow) of mlflow opensource project. You can clone the mlflow into the *data-lab-on-wsl/examples/jupyter/extra* directory and run examples by following the intructions of the jupyter notebooks under the example directory. If you don't have *extra* directory, you can create `mkdir -p extra`.
+You might have installed MLflow when you tried to install the Jupyter using `requirements.txt`, but if not, install MLflow from PyPI(Python Package Index). Open a terminal and activate the same virtual environment where we are running Jupyter, and install MLflow package: `pip install mlflow==2.20.0`. The version we will use in this example is 2.20.0. If you want to install the latest version of MLflow, just run command without specific version: `pip install mlflow`.
+
+#### Running ML experiments with MLflow Tracking Server
+MLflow Tracking Server is a centralized HTTP server that allows you to access your experiments artifacts regardless of where you run your code. To use the Tracking Server, you can either run it locally or use a managed service. Additionally, MLflow is a vendor-neutral, open-source platform which means you have access to the MLflow’s core capabilities sets such as tracking, evaluation, observability, and more, regardless of where you are doing machine learning.
+
+**NOTE** This local tracking server is simple and easy to use for testing or practice, but we recommend running a remote MLflow tracking server for use in production. Please refer to the [MLflow Tracking Server guide](https://mlflow.org/docs/latest/tracking/server.html) for more infromation about how to enable persistent backend or add upsteam proxy, or change other configurations.
+
+To start the local tracking server, move to the *data-lab-on-wsl/examples/jupyter/ml-ops* in a terminal with the virtual environment activated and run the `mlflow server` CLI command. By default, the tracking server will be running at `http://localhost:5000` and you can change the host name and port number using parameters: `mlflow server --host 127.0.0.1 --port 5000`. We'll use the MLflow fluent API to perform all interactions with the tracking server.
+
+Now you can start to learn how to integrate MLflow and Jupyter notebook for MLOps. Open the `mlflow.ipynb` notebook under the *data-lab-on-wsl/examples/jupyter/ml-ops* directory and follow the instructions. After you finished the lab, you will see `mlartifacts` and `mlruns` directories createdy by MLflow Tracking Server.
+
+#### Addtional MLflow Examples
+If you are looking for the latest examples and advanced guide for MLflow, you can follow the instructions from [the official MLflow repository](https://github.com/mlflow/mlflow). Clone the mlflow into the *data-lab-on-wsl/examples/jupyter/extra* directory and run examples by following the intructions of each jupyter notebooks under the example directory. You should make a *extra* directory where to clone the mlflow examples if you don't have it on your workspace.
 ```
 git clone https://github.com/mlflow/mlflow.git
 ```
 
 ![mlflow-web](../../images/wsl-jupyter-mlflow-web.png)
+
+#### Running ML pipelines with MLflow and Airflow
+- [MLOps with MLflow and Airflow](../airflow/README.md#mlops-with-mlflow-and-airflow)
 
 ### Simple LLM (Large Language Model)
 Open the `simple-llm-student-guide` notebook under the *data-lab-on-wsl/examples/jupyter/simple-llm* directory and follow the instructions.
@@ -70,6 +86,7 @@ Open the `simple-llm-student-guide` notebook under the *data-lab-on-wsl/examples
 - [Kubeflow](https://www.kubeflow.org/)
 - [MLflow](https://mlflow.org/)
 - [Polyaxon](https://polyaxon.com/)
+- [ZenML](https://www.zenml.io/)
 
 # References
 - [PyTorch for Deep Learning Bootcamp](https://github.com/mrdbourke/pytorch-deep-learning).

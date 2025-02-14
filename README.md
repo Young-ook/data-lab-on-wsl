@@ -99,17 +99,63 @@ Run your local standalone spark cluster:
 sh spark-ctl.sh -r
 ```
 
+### Apache Airflow
+#### Install Airflow
+You might have installed Airflow when you tried to install the Jupyter using `requirements.txt`, but if not, follow the *(Optional) Set Airlfow home directory* and *Install Airflow using the constraints file, which is determined based on the URL we pass* steps to install Airflow from PyPI(Python Package Index).
+
+**[Don't Forget]** to make sure that you've activated the python virtual environment with `source .venv/bin/activate` in the *data-lab-on-wsl* local directory.
+
+##### (Optional) Set Airlfow home directory
+The first time you run Airflow, it will create a file called `airflow.cfg` in your `AIRFLOW_HOME` directory (`$HOME/airflow` by default). The `AIRFLOW_HOME` environment variable is used to inform Airflow of the desired location. This step of setting the environment variable should be done before installing Airflow so that the installation process knows where to store the necessary files.
+
+You can set the home directory to a similar path commonly used by other tools: `export AIRFLOW_HOME=$HOME/.airflow`
+. Or, if you want one easy way to manage things, you can put everything in one place. Go to the *data-lab-on-wsl/examples/jupyter/ml-ops* and configure the environment variable: `export AIRFLOW_HOME=$PWD/airflow`.
+
+In this example, we will use the default home directory, skip for now.
+
+##### Install Airflow using the constraints file, which is determined based on the URL we pass
+Run the below where the same virtual environment Jupyter is running Jupyter. In this example we will install version 2.10.4, but if you always want to install the latest version, just remove the version from the pip install command (`pip install apache-airflow`).
+```
+AIRFLOW_VERSION=2.10.4
+
+# Extract the version of Python you have installed. If you're currently using a Python version that is not supported by Airflow, you may want to set this manually.
+# See above for supported versions.
+PYTHON_VERSION="$(python -c 'import sys; print(f"{sys.version_info.major}.{sys.version_info.minor}")')"
+
+#CONSTRAINT_URL="https://raw.githubusercontent.com/apache/airflow/constraints-${AIRFLOW_VERSION}/constraints-${PYTHON_VERSION}.txt"
+# For example this would install 2.10.4 with python 3.8: https://raw.githubusercontent.com/apache/airflow/constraints-2.10.4/constraints-3.8.txt
+
+pip install "apache-airflow==${AIRFLOW_VERSION}" #--constraint "${CONSTRAINT_URL}"
+```
+
+#### Run Airflow Standalone
+Run `airflow standalone` command to initialize the database, creates a user, and starts all components at once. The PID file for the webserver will be stored in `$AIRFLOW_HOME/airflow-webserver.pid` or in `/run/airflow/webserver.pid` if started by systemd.
+
+If you want to run the individual parts of Airflow manually rather than using the all-in-one standalone command, you can instead run:
+```
+airflow db migrate
+
+airflow users create --username admin --firstname FIRST_NAME --lastname LAST_NAME --role Admin --email admin@example.org
+Password:
+
+airflow webserver --port 8080
+airflow scheduler
+```
+
+**NOTE** This local system is simple and easy to use for testing or practice, but we recommend enable security, governance, monitoring, reverse proxing, persistent backend and more for use in production. Please refer to the [Production Deployment](https://airflow.apache.org/docs/apache-airflow/stable/administration-and-deployment/production-deployment.html).
+
 # Examples
+- [Airflow](examples/airflow/README.md)
 - [Jupyter](examples/jupyter/README.md)
 - [Spark](examples/spark/README.md)
 
 # Clean up
-You can stop and terminate the running juypter by simply pressing `ctrl+c` and following the instructions that appear. Then, type `deactivate` to exit the virtual environment:
+You can stop and terminate the running Juypter and Airflow by simply pressing `ctrl+c` and following the instructions that appear. Then, type `deactivate` to exit the virtual environment:
 ```
 (.venv) deactivate
 ```
 
-Then, you can stop your local standalone spark cluster after your spark job was finished:
+Then, you can stop your local standalone Spark cluster after your Spark job was finished:
 ```
 sh spark-ctl.sh -t
 ```
