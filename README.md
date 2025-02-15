@@ -105,7 +105,8 @@ sh spark-ctl.sh -r
 #### Install Airflow
 You might have installed Airflow when you tried to install the Jupyter using `requirements.txt`, but if not, follow the *(Optional) Set Airlfow home directory* and *Install Airflow using the constraints file, which is determined based on the URL we pass* steps to install Airflow from PyPI(Python Package Index).
 
-**[Don't Forget]** to make sure that you've activated the python virtual environment with `source .venv/bin/activate` in the *data-lab-on-wsl* local directory.
+> [!WARNING]
+> **Don't Forget** to make sure that you've activated the python virtual environment with `source .venv/bin/activate` in the *data-lab-on-wsl* local directory.
 
 ##### (Optional) Set Airlfow home directory
 The first time you run Airflow, it will create a file called `airflow.cfg` in your `AIRFLOW_HOME` directory (`$HOME/airflow` by default). The `AIRFLOW_HOME` environment variable is used to inform Airflow of the desired location. This step of setting the environment variable should be done before installing Airflow so that the installation process knows where to store the necessary files.
@@ -133,6 +134,9 @@ pip install "apache-airflow==${AIRFLOW_VERSION}" #--constraint "${CONSTRAINT_URL
 #### Run Airflow Standalone
 Run `airflow standalone` command to initialize the database, creates a user, and starts all components at once. The PID file for the webserver will be stored in `$AIRFLOW_HOME/airflow-webserver.pid` or in `/run/airflow/webserver.pid` if started by systemd.
 
+> [!NOTE]
+> This local system is simple and easy to use for testing or practice, but we recommend enable security, governance, monitoring, reverse proxing, persistent backend and more for use in production.
+
 If you want to run the individual parts of Airflow manually rather than using the all-in-one standalone command, you can instead run:
 ```
 airflow db migrate
@@ -143,8 +147,6 @@ Password:
 airflow webserver --port 8080
 airflow scheduler
 ```
-
-**NOTE** This local system is simple and easy to use for testing or practice, but we recommend enable security, governance, monitoring, reverse proxing, persistent backend and more for use in production. Please refer to the [Production Deployment](https://airflow.apache.org/docs/apache-airflow/stable/administration-and-deployment/production-deployment.html).
 
 # Examples
 - [Airflow](examples/airflow/README.md)
