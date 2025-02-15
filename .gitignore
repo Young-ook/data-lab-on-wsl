@@ -169,3 +169,10 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+# jupyter extra examples
+/examples/jupyter/extra
+
+# mlflow generated files
+**/mlartifacts
+**/mlruns

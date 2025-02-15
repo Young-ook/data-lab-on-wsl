@@ -50,6 +50,9 @@ MLOps(Machine Learning Operations) is a set of practices that help manage the ma
 
 In summary, *Kubeflow* is more focused on orchestration and deployment of ML workflows in Kubernetes environments, while *MLflow* is centered around experiment tracking and model management. The choice between them depends on your specific needs and infrastructure.
 
+> [!TIP]
+> This example is based on *MLflow*, which is relatively simple to implement. For a *Kubeflow* example that requires Kubernetes to be installed, see the [Terraform: Data on Amazon EKS](https://github.com/Young-ook/terraform-aws-eks/tree/main/examples/data-ai) repository.
+
 #### Install MLflow
 **[Don't Forget]** to make sure that you've activated the python virtual environment with `source .venv/bin/activate` in the *data-lab-on-wsl* local directory.
 
@@ -75,6 +78,10 @@ git clone https://github.com/mlflow/mlflow.git
 #### Running ML pipelines with MLflow and Airflow
 - [MLOps with MLflow and Airflow](../airflow/README.md#mlops-with-mlflow-and-airflow)
 
+#### Running ML pipelines with Kedro
+Kedro is an open-source Python framework to create reproducible, maintainable, and modular data science code. It uses software engineering best practices to help you build production-ready data science pipelines. You can build your MLOps pipeline by following the official [Kedro Tutorial](https://docs.kedro.org/en/stable/tutorial/spaceflights_tutorial.html).
+
+![kedro-viz](../../images/wsl-jupyter-kedro-viz.png)
 
 #### Running ML pipeline with ZenML
 ZenML is an open-source MLOps framework that seamlessly integrates existing infrastructure and tools. You can launch and test a ZenML yourself and take a tour with the guided [Quick Start](https://github.com/zenml-io/zenml/tree/main/examples/quickstart). And if you want to learn more details of ZenML for ML lifecycle management, you can look into the [ZenML](https://github.com/zenml-io/zenml) guide.
@@ -88,6 +95,7 @@ Open the `simple-llm-student-guide` notebook under the *data-lab-on-wsl/examples
 # Additional Resources
 - [Terraform: Amazon SageMaker](https://github.com/Young-ook/terraform-aws-sagemaker/tree/main/examples/blueprint)
 - [Terraform: Data on Amazon EKS](https://github.com/Young-ook/terraform-aws-eks/tree/main/examples/data-ai)
+- [Linux Foundation AI/Data Projects](https://lfaidata.foundation/projects/)
 - [PyTorch Tutorials](https://pytorch.org/tutorials/)
 - [Tensorflow Tutorials](https://www.tensorflow.org/tutorials)
 - [Kubeflow](https://www.kubeflow.org/)

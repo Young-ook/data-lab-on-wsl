@@ -16,7 +16,7 @@ Simply, you can run your spark Pi caculation application on your local machine.
 ```
 bash spark-pi-submit-job.sh -l
 ```
-![wsl-spark-pi-example-local](../../images/wsl-spark-pi-example-local.png)
+![wsl-spark-local-pi-app](../../images/wsl-spark-local-pi-app.png)
 
 ### Standalone Cluster
 Or, you can run your spark Pi application on your local standalone cluster. Follow the instructions to [run a spark standalone cluster](https://github.com/Young-ook/data-lab-on-wsl?tab=readme-ov-file#launch-a-standalone-cluster). You can skip this if your cluster is already running. Then, submit the standalone spark Pi job into your local cluster.
@@ -24,10 +24,10 @@ Or, you can run your spark Pi application on your local standalone cluster. Foll
 sh spark-ctl.sh -r
 bash spark-pi-submit-job.sh -s
 ```
-![wsl-spark-standalone-master-web-ui](../../images/wsl-spark-standalone-master-web-ui.png)
-![wsl-spark-standalone-worker-details-web](../../images/wsl-spark-standalone-worker-details-web.png)
-![wsl-spark-pi-example-standalone-app-details](../../images/wsl-spark-pi-example-standalone-app-details.png)
-![wsl-spark-pi-example-standalone-stdout](../../images/wsl-spark-pi-example-standalone-stdout.png)
+![wsl-spark-standalone-master-ui](../../images/wsl-spark-standalone-master-ui.png)
+![wsl-spark-standalone-worker-details](../../images/wsl-spark-standalone-worker-details.png)
+![wsl-spark-standalone-pi-app-details](../../images/wsl-spark-standalone-pi-app-details.png)
+![wsl-spark-standalone-pi-app-stdout](../../images/wsl-spark-standalone-pi-app-stdout.png)
 
 # Additional Resources
 
