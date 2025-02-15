@@ -25,7 +25,7 @@ A [DAG](https://airflow.apache.org/docs/apache-airflow/stable/core-concepts/dags
 cp -r data-lab-on-wsl/examples/airflow/dags $HOME/airflow/
 ```
 
-You will see the `greetings` and `ml_train` in the *DAGs* when you back to the Airflow. With these DAGs, you can see how Airflow works and how to integrate Airflow and MLflow for ML workflow management. Go to the *DAGs* and run DAGs you want.
+You will see the `greetings` and `ml_train` in the *DAGs* when you back to the Airflow. With these DAGs, you can see how Airflow works and how to integrate Airflow and MLflow for ML workflow management. Go to the *DAGs* and run what you want.
 ![wsl-airflow-dag-list](../../images/wsl-airflow-dag-list.png)
 ![wsl-airflow-mlflow-dag](../../images/wsl-airflow-mlflow-dag.png)
 
