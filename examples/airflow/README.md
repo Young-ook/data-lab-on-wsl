@@ -20,7 +20,7 @@ The DAGs list may not update, and new tasks will not be scheduled.
 ```
 
 #### Workflow Management with DAG(Directed Acyclic Graph)
-A DAG is the core concept of Airflow, collecting Tasks together, organized with dependencies and relationships to say how they should run. This DAG file repository is configured as `dags_folder` variable in the `airflow.cfg` file and the default path is `~/airflow/dags` (same as `$HOME/airflow/dags`). Copy the dags directory from the cloned repository into the Airflow home direcotry.
+A [DAG](https://airflow.apache.org/docs/apache-airflow/stable/core-concepts/dags.html) is the core concept of Airflow, collecting Tasks together, organized with dependencies and relationships to say how they should run. This DAG file repository is configured as `dags_folder` variable in the `airflow.cfg` file and the default path is `~/airflow/dags` (same as `$HOME/airflow/dags`). Copy the dags directory from the cloned repository into the Airflow home direcotry.
 ```
 cp -r data-lab-on-wsl/examples/airflow/dags $HOME/airflow/
 ```
