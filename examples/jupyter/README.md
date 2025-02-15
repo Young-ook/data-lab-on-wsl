@@ -79,9 +79,7 @@ git clone https://github.com/mlflow/mlflow.git
 - [MLOps with MLflow and Airflow](../airflow/README.md#mlops-with-mlflow-and-airflow)
 
 #### Running ML pipelines with Kedro
-Kedro is an open-source Python framework to create reproducible, maintainable, and modular data science code. It uses software engineering best practices to help you build production-ready data science pipelines.
-
-You can build MLOps pipeline by following the official [Kedro Tutorial](https://docs.kedro.org/en/stable/tutorial/spaceflights_tutorial.html). And this is Kedro-Viz example.
+Kedro is an open-source Python framework to create reproducible, maintainable, and modular data science code. It uses software engineering best practices to help you build production-ready data science pipelines. You can build your MLOps pipeline by following the official [Kedro Tutorial](https://docs.kedro.org/en/stable/tutorial/spaceflights_tutorial.html).
 
 ![kedro-viz](../../images/wsl-jupyter-kedro-viz.png)
 
