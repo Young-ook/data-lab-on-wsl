@@ -50,6 +50,9 @@ MLOps(Machine Learning Operations) is a set of practices that help manage the ma
 
 In summary, *Kubeflow* is more focused on orchestration and deployment of ML workflows in Kubernetes environments, while *MLflow* is centered around experiment tracking and model management. The choice between them depends on your specific needs and infrastructure.
 
+> [!TIP]
+> This example is based on *MLflow*, which is relatively simple to implement. For a *Kubeflow* example that requires Kubernetes to be installed, see the [Terraform: Data on Amazon EKS](https://github.com/Young-ook/terraform-aws-eks/tree/main/examples/data-ai) repository.
+
 #### Install MLflow
 **[Don't Forget]** to make sure that you've activated the python virtual environment with `source .venv/bin/activate` in the *data-lab-on-wsl* local directory.
 
