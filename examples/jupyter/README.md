@@ -81,6 +81,7 @@ Open the `simple-llm-student-guide` notebook under the *data-lab-on-wsl/examples
 # Additional Resources
 - [Terraform: Amazon SageMaker](https://github.com/Young-ook/terraform-aws-sagemaker/tree/main/examples/blueprint)
 - [Terraform: Data on Amazon EKS](https://github.com/Young-ook/terraform-aws-eks/tree/main/examples/data-ai)
+- [Linux Foundation AI/Data Projects](https://lfaidata.foundation/projects/)
 - [PyTorch Tutorials](https://pytorch.org/tutorials/)
 - [Tensorflow Tutorials](https://www.tensorflow.org/tutorials)
 - [Kubeflow](https://www.kubeflow.org/)
