@@ -29,6 +29,9 @@ You will see the `greetings` and `ml_train` in the *DAGs* when you back to the A
 ![wsl-airflow-dag-list](../../images/wsl-airflow-dag-list.png)
 ![wsl-airflow-mlflow-dag](../../images/wsl-airflow-mlflow-dag.png)
 
+> [!IMPORTANT]
+> Please make sure that your MLflow Tracking Server is running before you run the MLOps with Airflow and MLflow DAG. For more information how to run a MLflow Tracking Server, follow the [Install MLflow](../jupyter/README.md#install-mlflow) instructions.
+
 If the ML pipeline was successfully finished, you can see the a new experiment has been recorded in MLflow Tracking Server. Access `localhost:5000` to see the latest experiment *airflow* registred as the source.
 ![wsl-airflow-mlflow-exp](../../images/wsl-airflow-mlflow-exp.png)
 
