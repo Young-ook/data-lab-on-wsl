@@ -83,6 +83,12 @@ Kedro is an open-source Python framework to create reproducible, maintainable, a
 
 ![kedro-viz](../../images/wsl-jupyter-kedro-viz.png)
 
+#### Running ML pipeline with ZenML
+ZenML is an open-source MLOps framework that seamlessly integrates existing infrastructure and tools. You can launch and test a ZenML yourself and take a tour with the guided [Quick Start](https://github.com/zenml-io/zenml/tree/main/examples/quickstart). And if you want to learn more details of ZenML for ML lifecycle management, you can look into the [ZenML](https://github.com/zenml-io/zenml) guide.
+
+![wsl-jupyter-zenml-pipelines](../../images/wsl-jupyter-zenml-pipelines.png)
+![wsl-jupyter-zenml-server-comp](../../images/wsl-jupyter-zenml-server-comp.png)
+
 ### Simple LLM (Large Language Model)
 Open the `simple-llm-student-guide` notebook under the *data-lab-on-wsl/examples/jupyter/simple-llm* directory and follow the instructions.
 
