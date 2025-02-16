@@ -36,7 +36,6 @@ If the ML pipeline was successfully finished, you can see the a new experiment h
 ![wsl-airflow-mlflow-exp](../../images/wsl-airflow-mlflow-exp.png)
 
 # Additional Resources
-- [Terraform: Data on Amazon EKS](https://github.com/Young-ook/terraform-aws-eks/tree/main/examples/data-ai)
 
 # References
 - [Installation of Airflow](https://airflow.apache.org/docs/apache-airflow/stable/installation/index.html)
