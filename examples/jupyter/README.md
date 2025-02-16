@@ -54,7 +54,8 @@ In summary, *Kubeflow* is more focused on orchestration and deployment of ML wor
 > This example is based on *MLflow*, which is relatively simple to implement. For a *Kubeflow* example that requires Kubernetes to be installed, see the [Terraform: Data on Amazon EKS](https://github.com/Young-ook/terraform-aws-eks/tree/main/examples/data-ai) repository.
 
 #### Install MLflow
-**[Don't Forget]** to make sure that you've activated the python virtual environment with `source .venv/bin/activate` in the *data-lab-on-wsl* local directory.
+> [!WARNING]
+> **Don't Forget** to make sure that you've activated the python virtual environment with `source .venv/bin/activate` in the *data-lab-on-wsl* local directory.
 
 You might have installed MLflow when you tried to install the Jupyter using `requirements.txt`, but if not, install MLflow from PyPI(Python Package Index). Open a terminal and activate the same virtual environment where we are running Jupyter, and install MLflow package: `pip install mlflow==2.20.0`. The version we will use in this example is 2.20.0. If you want to install the latest version of MLflow, just run command without specific version: `pip install mlflow`.
 
@@ -93,8 +94,6 @@ ZenML is an open-source MLOps framework that seamlessly integrates existing infr
 Open the `simple-llm-student-guide` notebook under the *data-lab-on-wsl/examples/jupyter/simple-llm* directory and follow the instructions.
 
 # Additional Resources
-- [Terraform: Amazon SageMaker](https://github.com/Young-ook/terraform-aws-sagemaker/tree/main/examples/blueprint)
-- [Terraform: Data on Amazon EKS](https://github.com/Young-ook/terraform-aws-eks/tree/main/examples/data-ai)
 - [Linux Foundation AI/Data Projects](https://lfaidata.foundation/projects/)
 - [PyTorch Tutorials](https://pytorch.org/tutorials/)
 - [Tensorflow Tutorials](https://www.tensorflow.org/tutorials)
