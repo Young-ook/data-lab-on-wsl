@@ -33,7 +33,7 @@ python -m venv .venv
 source ./.venv/bin/activate
 ```
 
-After you are in your virtual environment, install jupyter package and dependencies using PIP(Package Installer for Python). The packages described in the *requirements.txt" file are tested on python 3.11.2, therefore you may see error if you are running on different python version.
+After you are in your virtual environment, install jupyter package and dependencies using PIP(Package Installer for Python). The packages described in the *requirements.txt* file are tested on python 3.11.2, therefore you may see error if you are running on different python version.
 ```
 (.venv) pip install -r requirements.txt
 ```
