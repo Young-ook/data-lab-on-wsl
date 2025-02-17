@@ -1,5 +1,6 @@
 # Data on WSL(Windows Subsystem for Linux)
-This is a project shows how to build an AI/ML system in a WSL environment. Of course, the same can be applied in a general Linux environment.
+> [!TIP]
+> This is a project shows how to build an AI/ML system in a WSL environment. Of course, the same can be applied in a general Linux environment.
 
 ## Install Debian on WSL
 Open Settings > Apps > Programs and Features > Turn Windows features on or off dialog and select the *Windows Subsystem for Linux* to enable WSL on your system. You may reboot your system.
@@ -33,7 +34,7 @@ python -m venv .venv
 source ./.venv/bin/activate
 ```
 
-After you are in your virtual environment, install jupyter package and dependencies using PIP(Package Installer for Python). The packages described in the *requirements.txt" file are tested on python 3.11.2, therefore you may see error if you are running on different python version.
+After you are in your virtual environment, install jupyter package and dependencies using PIP(Package Installer for Python). The packages described in the *requirements.txt* file are tested on python 3.11.2, therefore you may see error if you are running on different python version.
 ```
 (.venv) pip install -r requirements.txt
 ```
