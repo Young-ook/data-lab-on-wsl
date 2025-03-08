@@ -36,7 +36,7 @@ kubectl get nodes
 You should see at least one node listed, confirming your cluster is up and running.
 
 ### Optional - Install Minikube (Alternative to Docker Desktop)
-Install Minikube by following the instructions on the [official Minikube site](https://minikube.sigs.k8s.io/docs/start/). Start a Minikube cluster:
+Install Minikube by following the instructions on the [official Minikube site](https://minikube.sigs.k8s.io/docs/start/) and start a Minikube cluster:
 ```bash
 minikube start
 ```
