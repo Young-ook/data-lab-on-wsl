@@ -152,6 +152,7 @@ airflow scheduler
 # Examples
 - [Airflow](examples/airflow/README.md)
 - [Jupyter](examples/jupyter/README.md)
+- [Kubernetes](examples/kubernetes/README.md)
 - [Spark](examples/spark/README.md)
 
 # Clean up
