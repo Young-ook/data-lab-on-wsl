@@ -3,7 +3,7 @@
 ### PyTorch for Deep Learning Bootcamp
 Clone the repository into the *data-lab-on-wsl/examples/jupyter/extra* directory. If you have the *extra* directory you can create before you clone the repository using `mkdir -p extra`. To run hands-on labs, open each notebooks and follow the tutorials for pytorch deep learning course. For more details, please check out the [references](./README.md#references) at the bottom of this page.
 
-**NOTE** Make sure to clone the repository via SSH, not HTTP. Due to the large file size, you might see a gPRC error when you try to download the project over HTTP.
+**NOTE** Make sure to clone the repository via SSH, not HTTP. Due to the large file size, you might see a gRPC error when you try to download the project over HTTP.
 ```
 git clone git@github.com:mrdbourke/pytorch-deep-learning.git
 ```
