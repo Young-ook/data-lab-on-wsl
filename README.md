@@ -20,8 +20,8 @@ sudo apt update
 sudo apt install python3 python3-venv python3-pip-whl python-is-python3
 ```
 
-Verify your python installation status using `python -V` or `python --version`. 
-**Note** Configure alias to the python version 3 binary file if you are not able to install *python-is-python3* package.
+Verify your python installation status using `python -V` or `python --version`. If you are not able to install *python-is-python3* package, configure alias to the python version 3 binary file.
+
 ```
 edit ~/.bashrc
 alias python="/usr/bin/python3"
